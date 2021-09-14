@@ -1,0 +1,50 @@
+---
+layout: default
+title: Blog
+---
+
+{% unless paginator.previous_page %}
+{% include intro.html %}
+{% endunless %}
+
+{% for post in paginator.posts %}
+  {% if post.external_url %}
+    {% assign post_url = post.external_url %}
+  {% else %}
+    {% assign post_url = post.url %}
+  {% endif %}
+
+  <div>
+    <a href="{{ post_url }}"><h1>{{ post.title }}</h1></a>
+    {% include post-metadata.html %}
+    {{ post.excerpt }}
+    <p><a href="{{ post_url }}">Read more&mldr;</a></p>
+  </div>
+{% endfor %}
+
+<div class="container-xxl my-3">
+  <div class="row">
+    <div class="col col-12 text-end">
+      <nav>
+        <span class="px-2">
+          {% if paginator.previous_page %}
+            {% if paginator.page == 2 %}
+              <a class="pagination-item newer" href="{{ site.url }}/">&larr;&nbsp;Newer</a>
+            {% else %}
+              <a class="pagination-item newer" href="{{ site.url }}/page{{paginator.previous_page}}">&larr;&nbsp;Newer</a>
+            {% endif %}
+          {% else %}
+            <span class="pagination-item newer">&larr;&nbsp;Newer</span>
+          {% endif %}
+        </span>
+        <span class="px-2">
+          {% if paginator.next_page %}
+            <a class="pagination-item older" href="{{ site.url }}/page{{paginator.next_page}}">Older&nbsp;&rarr;</a>
+          {% else %}
+            <span class="pagination-item older">Older&nbsp;&rarr;</span>
+          {% endif %}
+        </span>
+        </nav>
+    </div>
+  </div>
+</div>

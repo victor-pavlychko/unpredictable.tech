@@ -1,0 +1,23 @@
+{% if post %}
+  {% assign p = post %}
+{% else %}
+  {% assign p = page %}
+{% endif %}
+
+{% if p.external_url %}
+  {% assign url = p.external_url %}
+{% else %}
+  {% assign url = p.url %}
+{% endif %}
+
+<p class="post-date">
+  Posted {{ p.date | date_to_string }}
+  {% if p.external_name %}
+    in <a href="{{ p.external_url }}">{{ p.external_name }}</a>
+  {% elsif p.tags.size %}
+    {% for tag in p.tags %}
+      {% if forloop.first %}in{% endif %}
+      <a href="/tags/#{{ tag | slugize }}">#{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  {% endif %}
+</p>

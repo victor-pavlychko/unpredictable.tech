@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet"> -->
+    <link href="{{ site.url }}/public/css/styles.css" rel="stylesheet">
+    <link href="{{ site.url }}/public/css/syntax.css" rel="stylesheet">
+    <title>{{ page.title }}</title>
+  </head>
+  <body data-spy="scroll" data-target="#toc">
+    <header class="navbar navbar-expand-md">
+      <div class="container-xxl flex-wrap flex-md-nowrap">
+        <span class="navbar-brand">{{ site.title }}</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi-list" role="img"></i>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="bdNavbar">
+          <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
+            <li class="nav-item col-6 col-md-auto">
+              <a class="nav-link p-2" href="{{ site.url }}">Blog</a>
+            </li>
+
+            {% for node in site.pages %}
+              {% if node.navbar_visible %}
+                <li class="nav-item col-6 col-md-auto">
+                  <a class="nav-link p-2 {% if page.url == node.url %}active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        
+          <hr class="d-md-none text-white-50">
+        
+          <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+            {% for link in site.links %}
+              <li>
+                <a class="nav-link p-2" href="{{ link.url }}">
+                  <i class="{{ link.icon }}" role="img" aria-label="{{ li.title }}"></i>
+                </a>
+              </li>
+            {% endfor %}
+
+            <li class="nav-item col-6 col-md-auto">
+              <a class="nav-link p-2" href="{{ site.url }}/atom.xml">
+                <i class="bi-rss" role="img" aria-label="RSS"></i>
+              </a>
+            </li>
+          </ul>
+        </div>        
+      </div>
+    </header>
+
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col col-12">
+          <article>
+            {{ content }}
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-3">
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col col-12">
+            <p>{{ site.title }}&nbsp;&mdash; {{ site.tagline }}.</p>
+            <p>&copy; {{ "now" | date: "%Y" }} {{ site.author.name }}.</p>
+          </div>
+        </div>
+      </div>  
+    </footer>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>  
+    <script src="{{ site.url }}/public/js/copy-button.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+      window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    </script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script> -->
+  </body>
+</html>

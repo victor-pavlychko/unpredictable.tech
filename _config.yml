@@ -1,0 +1,39 @@
+url: https://unpredictable.tech
+title: unpredictable.tech
+tagline: misusing technology to build better software
+
+links:
+  - title: Twitter
+    icon: bi-twitter
+    url: https://twitter.com/victorpavlychko
+  - title: GitHub
+    icon: bi-github
+    url: https://github.com/victor-pavlychko
+
+author:
+  name: Victor Pavlychko
+  email: 
+  url: https://twitter.com/victorpavlychko
+
+paginate: 5
+paginate_path: page:num
+permalink: pretty
+excerpt_separator: <!-- more -->
+
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false

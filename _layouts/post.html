@@ -1,0 +1,11 @@
+---
+layout: page
+---
+
+{% include post-metadata.html %}
+{{ content }}
+
+{% if page.external_url %}
+  <p><a href="{{ page.external_url }}">Read more&mldr;</a></p>
+  <script>window.location.href = "{{ page.external_url }}";</script>
+{% endif %}

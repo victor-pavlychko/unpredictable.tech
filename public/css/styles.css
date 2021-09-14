@@ -1,0 +1,93 @@
+html {
+  --background-color-main: #ffffff;
+  --text-color-heading: #2c3e50;
+  --text-color-main: #000000;
+  --text-color-code: #326D74;
+  --text-color-meta: #666666;
+  --text-color-link: #2980b9;
+  --text-color-navbar: #000000;
+  --link-underline-color-normal: rgba(0, 0, 0, 0.175);
+  --link-underline-color-hover: #7f8c8d;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --background-color-main: #111111;
+    --text-color-heading: #ecf0f1;
+    --text-color-main: #ffffff;
+    --text-color-code: #67B7A4;
+    --text-color-meta: #bdc3c7;
+    --text-color-link: #3498db;
+    --text-color-navbar: #ffffff;
+    --link-underline-color-normal: rgba(255, 255, 255, 0.25);
+    --link-underline-color-hover: #7f8c8d;
+  }
+}
+
+html {
+  font-size: 137.5%;
+}
+
+body {
+  font-family: ui-sans-serif, Calibri, Helvetica, Arial, sans-serif;
+  background-color: var(--background-color-main);
+  color: var(--text-color-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color-heading);
+}
+
+article {
+  font-family: ui-serif, Cambria, Georgia, Times, serif;
+  padding-top: 1rem;  
+  -webkit-font-smoothing: antialiased;
+}
+
+code {
+  color: var(--text-color-code);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+
+.post-date, footer {
+  font-size: 80%;
+  font-family: ui-sans-serif, Calibri, Helvetica, Arial, sans-serif;
+  color: var(--text-color-meta);
+}
+
+footer p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.333em;
+}
+
+.navbar .navbar-brand {
+  font-size: var(--bs-body-font-size);
+}
+
+a:any-link {
+  color: var(--text-color-link);
+  text-decoration: none;
+  border-bottom: 2px solid var(--link-underline-color-normal);
+  margin-bottom: -2px;
+}
+
+.navbar a:any-link {
+  color: var(--text-color-navbar);
+  border-bottom-color: transparent;
+}
+
+a:hover {
+  border-bottom-color: var(--link-underline-color-hover) !important;
+}
+
+pre.highlight {
+  position: relative;
+}
+
+pre.highlight > button.copy-code {
+  position: absolute;
+  font-size: 75%;
+  right: 1.25rem;
+  top: 1rem;
+}
