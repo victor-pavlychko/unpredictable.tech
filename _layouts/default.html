@@ -24,16 +24,10 @@
         
         <div class="collapse navbar-collapse" id="bdNavbar">
           <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
-            <li class="nav-item col-6 col-md-auto">
-              <a class="nav-link p-2" href="{{ "/" | relative_url }}">Blog</a>
-            </li>
-
-            {% for node in site.pages %}
-              {% if node.navbar_visible %}
-                <li class="nav-item col-6 col-md-auto">
-                  <a class="nav-link p-2 {% if page.url == node.url %}active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-                </li>
-              {% endif %}
+            {% for link in site.menu %}
+              <li class="nav-item col-6 col-md-auto">
+                <a class="nav-link p-2 {% if page.url == link.url %}active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
             {% endfor %}
           </ul>
         

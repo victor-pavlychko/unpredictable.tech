@@ -2,6 +2,10 @@ url: https://unpredictable.tech
 title: unpredictable.tech
 tagline: misusing technology to build better software
 
+menu:
+  - title: Blog
+    url: /
+
 links:
   - title: Twitter
     icon: bi-twitter
