@@ -8,7 +8,11 @@
     <!-- <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet"> -->
     <link href="{{ "/public/css/styles.css" | relative_url }}" rel="stylesheet">
     <link href="{{ "/public/css/syntax.css" | relative_url }}" rel="stylesheet">
-    <title>{{ page.title }}</title>
+    {% if page.title %}
+      <title>{{ page.title }} - {{ site.title }}</title>
+    {% else %}
+      <title>{{ site.title }}</title>
+    {% endif %}
   </head>
   <body data-spy="scroll" data-target="#toc">
     <header class="navbar navbar-expand-md">
