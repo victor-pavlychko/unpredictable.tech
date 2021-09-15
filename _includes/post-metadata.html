@@ -4,16 +4,10 @@
   {% assign p = page %}
 {% endif %}
 
-{% if p.external_url %}
-  {% assign url = p.external_url %}
-{% else %}
-  {% assign url = p.url %}
-{% endif %}
-
 <p class="post-date">
   Posted {{ p.date | date_to_string }}
   {% if p.external_name %}
-    in <a href="{{ p.external_url }}">{{ p.external_name }}</a>
+    in {{ p.external_name }}
   {% elsif p.tags.size %}
     {% for tag in p.tags %}
       {% if forloop.first %}in{% endif %}

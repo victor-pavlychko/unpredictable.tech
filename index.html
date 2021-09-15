@@ -15,10 +15,10 @@ title: Blog
   {% endif %}
 
   <div>
-    <a href="{{ post_url }}"><h1>{{ post.title }}</h1></a>
+    <a href="{{ post_url }}" data-goatcounter-click="{{ post_url }}"><h1>{{ post.title }}</h1></a>
     {% include post-metadata.html %}
     {{ post.excerpt }}
-    <p><a href="{{ post_url }}">Read more&mldr;</a></p>
+    <p><a href="{{ post_url }}" data-goatcounter-click="{{ post_url }}">Read more&mldr;</a></p>
   </div>
 {% endfor %}
 

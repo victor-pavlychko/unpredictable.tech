@@ -79,13 +79,29 @@
       </div>  
     </footer>
   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src="{{ "/public/js/copy-button.js" | relative_url }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>  
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-      mermaid.initialize({ startOnLoad: true });
-      window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-    </script>
+
+    {% if site.integrations.mermaid %}
+      <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+      <script>
+        window.mermaid.initialize({ startOnLoad: true });
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+      </script>
+    {% endif %}
+
+    {% if site.integrations.goatcounter %}
+      <script>
+        window.goatcounter = {
+          endpoint: "{{ site.integrations.goatcounter }}",
+          path: window.location.pathname || '/',
+          no_onload: window.location.host !== new URL('{{ site.url }}').host,
+          allow_local: false
+        };
+      </script>
+      <script async src="//gc.zgo.at/count.js"></script>
+    {% endif %}
+
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script> -->
     <!-- <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script> -->
   </body>

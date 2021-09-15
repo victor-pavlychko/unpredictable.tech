@@ -15,6 +15,10 @@ author:
   email: 
   url: https://twitter.com/victorpavlychko
 
+integrations:
+  mermaid: true
+  goatcounter: https://stats.unpredictable.tech/count
+
 paginate: 5
 paginate_path: page:num
 permalink: pretty
