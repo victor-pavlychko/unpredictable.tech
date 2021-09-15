@@ -18,8 +18,13 @@ layout: null
   {% for post in site.posts %}
     {% if post.external_url %}
       {% assign post_url = post.external_url %}
+      {% capture content %}
+        {{ post.content }}
+        <p><a href="{{ post_url }}">Read more&mldr;</a></p>
+      {% endcapture %}
     {% else %}
       {% assign post_url = post.url | absolute_url %}
+      {% assign content = post.content %}
     {% endif %}
 
     <entry>
@@ -27,7 +32,7 @@ layout: null
       <link href="{{ post_url }}"/>
       <updated>{{ post.date | date_to_xmlschema }}</updated>
       <id>{{ post_url }}</id>
-      <content type="html">{{ post.content | xml_escape }}</content>
+      <content type="html">{{ content | xml_escape }}</content>
     </entry>
   {% endfor %}
 
