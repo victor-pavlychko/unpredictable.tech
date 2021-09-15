@@ -72,6 +72,12 @@ a:any-link {
   margin-bottom: -2px;
 }
 
+h1 a:any-link, h2 a:any-link, h3 a:any-link, h4 a:any-link, h5 a:any-link, h6 a:any-link {
+  color: var(--text-color-heading);
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
 .navbar a:any-link {
   color: var(--text-color-navbar);
   border-bottom-color: transparent;

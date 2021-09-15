@@ -18,7 +18,7 @@ title: Blog
   {% endif %}
 
   <div>
-    <a href="{{ post_url }}" {{ tracking }}><h1>{{ post.title }}</h1></a>
+    <h1><a href="{{ post_url }}" {{ tracking }}>{{ post.title }}</a></h1>
     {% include post-metadata.html %}
     {{ post.excerpt }}
     <p><a href="{{ post_url }}" {{ tracking }}>Read more&mldr;</a></p>
