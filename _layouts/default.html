@@ -6,8 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet"> -->
-    <link href="{{ site.url }}/public/css/styles.css" rel="stylesheet">
-    <link href="{{ site.url }}/public/css/syntax.css" rel="stylesheet">
+    <link href="{{ "/public/css/styles.css" | relative_url }}" rel="stylesheet">
+    <link href="{{ "/public/css/syntax.css" | relative_url }}" rel="stylesheet">
     <title>{{ page.title }}</title>
   </head>
   <body data-spy="scroll" data-target="#toc">
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="bdNavbar">
           <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0">
             <li class="nav-item col-6 col-md-auto">
-              <a class="nav-link p-2" href="{{ site.url }}">Blog</a>
+              <a class="nav-link p-2" href="{{ "/" | relative_url }}">Blog</a>
             </li>
 
             {% for node in site.pages %}
@@ -45,7 +45,7 @@
             {% endfor %}
 
             <li class="nav-item col-6 col-md-auto">
-              <a class="nav-link p-2" href="{{ site.url }}/atom.xml">
+              <a class="nav-link p-2" href="{{ "/atom.xml" | relative_url }}">
                 <i class="bi-rss" role="img" aria-label="RSS"></i>
               </a>
             </li>
@@ -75,8 +75,8 @@
       </div>  
     </footer>
   
+    <script src="{{ "/public/js/copy-button.js" | relative_url }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>  
-    <script src="{{ site.url }}/public/js/copy-button.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       mermaid.initialize({ startOnLoad: true });
