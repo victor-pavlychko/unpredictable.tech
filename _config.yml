@@ -2,6 +2,11 @@ url: https://unpredictable.tech
 title: unpredictable.tech
 tagline: misusing technology to build better software
 
+author:
+  name: Victor Pavlychko
+  email: 
+  url: https://twitter.com/victorpavlychko
+
 menu:
   - title: Blog
     url: /
@@ -9,15 +14,13 @@ menu:
 links:
   - title: Twitter
     icon: bi-twitter
-    url: https://twitter.com/victorpavlychko
+    external_url: https://twitter.com/victorpavlychko
   - title: GitHub
     icon: bi-github
-    url: https://github.com/victor-pavlychko
-
-author:
-  name: Victor Pavlychko
-  email: 
-  url: https://twitter.com/victorpavlychko
+    external_url: https://github.com/victor-pavlychko
+  - title: RSS
+    icon: bi-rss
+    url: /atom.xml
 
 integrations:
   mermaid: true
