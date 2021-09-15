@@ -6,5 +6,8 @@ layout: page
 {{ content }}
 
 {% if page.external_url %}
-  <p><a href="{{ page.external_url }}" data-goatcounter-click="{{ page.external_url }}">Read more&mldr;</a></p>
+  {% if site.integrations.goatcounter %}
+    {% capture tracking %} data-goatcounter-click="{{ page.external_url }}" {% endcapture %}
+  {% endif %}
+  <p><a href="{{ page.external_url }}" {{ tracking }}>Read more&mldr;</a></p>
 {% endif %}

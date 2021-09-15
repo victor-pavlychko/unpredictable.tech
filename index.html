@@ -10,15 +10,18 @@ title: Blog
 {% for post in paginator.posts %}
   {% if post.external_url %}
     {% assign post_url = post.external_url %}
+    {% if site.integrations.goatcounter %}
+      {% capture tracking %} data-goatcounter-click="{{ post_url }}" {% endcapture %}
+    {% endif %}
   {% else %}
     {% assign post_url = post.url %}
   {% endif %}
 
   <div>
-    <a href="{{ post_url }}" data-goatcounter-click="{{ post_url }}"><h1>{{ post.title }}</h1></a>
+    <a href="{{ post_url }}" {{ tracking }}><h1>{{ post.title }}</h1></a>
     {% include post-metadata.html %}
     {{ post.excerpt }}
-    <p><a href="{{ post_url }}" data-goatcounter-click="{{ post_url }}">Read more&mldr;</a></p>
+    <p><a href="{{ post_url }}" {{ tracking }}>Read more&mldr;</a></p>
   </div>
 {% endfor %}
 
