@@ -78,6 +78,10 @@ h1 a:any-link, h2 a:any-link, h3 a:any-link, h4 a:any-link, h5 a:any-link, h6 a:
   margin-bottom: 0;
 }
 
+a:any-link.anchorjs-link::after {
+  opacity: 0.25;
+}
+
 .navbar a:any-link {
   color: var(--text-color-navbar);
   border-bottom-color: transparent;
