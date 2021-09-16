@@ -6,8 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet"> -->
-    <link href="{{ "/public/css/styles.css" | relative_url }}" rel="stylesheet">
-    <link href="{{ "/public/css/syntax.css" | relative_url }}" rel="stylesheet">
+    <link href="{{ "/assets/css/styles.css" | relative_url }}" rel="stylesheet">
+    <link href="{{ "/assets/css/syntax.css" | relative_url }}" rel="stylesheet">
     {% if page.title %}
       <title>{{ page.title }} - {{ site.title }}</title>
     {% else %}
@@ -81,7 +81,16 @@
     </footer>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script src="{{ "/public/js/copy-button.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/copy-button.js" | relative_url }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+    <script>
+      window.anchors.options = {
+        placement: 'left',
+        icon: '#'
+      };
+      window.anchors.add();
+    </script>
 
     {% if site.integrations.mermaid %}
       <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
@@ -102,15 +111,6 @@
       </script>
       <script async src="//gc.zgo.at/count.js"></script>
     {% endif %}
-
-    <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-    <script>
-      window.anchors.options = {
-        placement: 'left',
-        icon: '#'
-      };
-      window.anchors.add();
-    </script>
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script> -->
     <!-- <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script> -->

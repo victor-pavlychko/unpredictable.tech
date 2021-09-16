@@ -32,7 +32,6 @@ permalink: pretty
 excerpt_separator: <!-- more -->
 
 plugins:
-  - jekyll-gist
   - jekyll-paginate
   - jekyll-seo-tag
 
